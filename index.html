@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="active">Homepage</a>
+            <a href="#" class="home">Only Today</a>
+        </nav>
+        <h1>Hi, You have <span id="taskCount">0</span> undone tasks</h1>
+    </header>
+    <main>
+        <h2>All Todos</h2>
+        <section id="todoSection">
+            <h3>For Today - <span id="todayCount">0</span></h3>
+            <div id="todosContainer" class="today"></div>
+        </section>
+        <section id="todoSection" class="two">
+            <h3>For Today - <span id="todayCount">0</span></h3>
+            <div id="todosContainer" class="tomorrow"></div>
+        </section>
+        <section id="todoSection" class="three">
+            <h3>For Today - <span id="todayCount">0</span></h3>
+            <div id="todosContainer" class="later"></div>
+        </section>
+    </main>
+    <script src="./main.js"></script>
+</body>
+</html>

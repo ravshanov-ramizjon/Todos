@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    margin: 20px 0;
+}
+
+nav {
+    margin-bottom: 67px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #A5A5B4;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+nav a.active {
+    color: #FFC700;
+    text-decoration: underline;
+}
+
+h1 {
+    color: #000000;
+    font-size: 24px;
+    margin-bottom: 83px;
+    font-weight: bold;
+}
+
+main {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    color: #000000;
+    font-size: 48px;
+    margin-bottom: 39px;
+}
+#todoSection{
+    margin-bottom: 130px;
+}
+#todoSection h3 {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 10px 0;
+    color: #FFC700;
+}
+
+#todosContainer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(123px, 629px));
+    justify-content: center;
+    gap: 15px;
+}
+
+.todoCard {
+    align-items: start;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.todoCard h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.todoCard p {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0;
+    color: #A5A5B4;
+}
+
+.todoCard span {
+    color: #FFC700;
+    font-size: 16px;
+    font-weight: 600;
+}
