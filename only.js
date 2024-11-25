@@ -2,13 +2,9 @@ fetch("http://localhost:3001/arr")
     .then(res => res.json())
     .then(todos => {
         const today = document.querySelector(".today");
-        const taskCount = document.getElementById("taskCount");
-        const todayCount = document.getElementById("todayCount");
 
-        taskCount.textContent = todos.length;
 
-        const todayTodos = todos.filter(todo => todo.left === 0);
-        todayCount.textContent = todayTodos.length;
+
 
         todos.forEach(todo => {
             const todoCard = document.createElement("div");
@@ -21,8 +17,8 @@ fetch("http://localhost:3001/arr")
             title.textContent = todo.title;
             description.textContent = "Lorem ipsum dolor sit amet.";
 
-                if (todo.left === 0) {
-                    daysLeft.textContent ="Today"
+            if (todo.left === 0) {
+                daysLeft.textContent = "Today"
             }
 
             const checkbox = createCheckbox(todo);
@@ -30,7 +26,7 @@ fetch("http://localhost:3001/arr")
 
             if (todo.left <= 0) {
                 today.append(todoCard);
-            } 
+            }
         });
     })
     .catch(error => console.error("Error:", error));
@@ -59,4 +55,3 @@ function saveTodoState(id, completed) {
         .then(response => response.json())
         .catch(error => console.error("Error:", error));
 }
-

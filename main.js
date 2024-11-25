@@ -6,11 +6,17 @@ fetch("http://localhost:3001/arr")
         const later = document.querySelector(".later");
         const taskCount = document.getElementById("taskCount");
         const todayCount = document.getElementById("todayCount");
+        const tomorrowCount = document.getElementById("tomorrowCount");
+        const laterCount = document.getElementById("laterCount");
 
         taskCount.textContent = todos.length;
 
         const todayTodos = todos.filter(todo => todo.left === 0);
         todayCount.textContent = todayTodos.length;
+        const tomorrowTodos = todos.filter(todo => todo.left === 1);
+        tomorrowCount.textContent = tomorrowTodos.length;
+        const laterTodos = todos.filter(todo => todo.left > 1);
+        laterCount.textContent = laterTodos.length;
 
         todos.forEach(todo => {
             const todoCard = document.createElement("div");
@@ -26,8 +32,8 @@ fetch("http://localhost:3001/arr")
                 todo.left === 0
                     ? "Today"
                     : todo.left === 1
-                    ? "Tomorrow"
-                    : `${todo.left} days left`;
+                        ? "Tomorrow"
+                        : `${todo.left} days left`;
 
             const checkbox = createCheckbox(todo);
             todoCard.append(checkbox, title, description, daysLeft);
@@ -49,6 +55,8 @@ function createCheckbox(todo) {
     checkbox.checked = todo.completed;
     checkbox.className = "todoCheckbox";
     checkbox.style.color = "#FFC700"
+    checkbox.style.backgroundColor = "#FFC700"
+    checkbox.style.right = "20px"
 
     checkbox.onchange = function () {
         todo.completed = checkbox.checked;
@@ -60,12 +68,12 @@ function createCheckbox(todo) {
 
 function saveTodoState(id, completed) {
     fetch(`http://localhost:3001/arr/${id}`, {
-        method: "PATCH", 
-     
+        method: "PATCH",
+
         body: JSON.stringify({ completed })
     })
-    .then(response => response.json())
-    .catch(error => console.error("Error:", error));
+        .then(response => response.json())
+        .catch(error => console.error("Error:", error));
 }
 
 const home = document.querySelector(".home");
